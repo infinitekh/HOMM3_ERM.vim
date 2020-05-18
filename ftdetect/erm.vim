@@ -15,4 +15,7 @@
 "===============================================================================
 
 autocmd BufNewFile,BufRead *.erm setfiletype erm
+"autocmd BufNewFile,BufRead *.erm execute 'setlocal dict+=erm_events.txt'
+autocmd BufNewFile,BufRead *.erm execute 'setlocal dict+=' . expand("<sfile>:p:h") . "/erm_events.txt"
+
 

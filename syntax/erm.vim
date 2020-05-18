@@ -32,14 +32,18 @@ hi def link ermTrigger Define
 
 
 syn match ermBeginKeyword "\%^ZVSE"
-hi def link ermBeginKeyword		Exception
+"hi def link ermBeginKeyword		Exception
+hi ermBeginKeyword  ctermbg=White ctermfg=DarkBlue 
 
-syn match ermCommentBegin "\(^\|;\)\zs[^!]\+\ze\(!!\|$\)"
-syn match ermCommentLine "^\s*[^!].*"
+
+syn match ermCommentBegin "\(^\|;\)\zs[^!]\+\ze\(!!\|$\)" contains=ermComment
+syn match ermCommentLine "^\s*[^!].*" contains=ermBeginKeyword,ermComment
 syntax region ermComment start="\[" end="\]" 
 hi def link ermComment Comment
+hi ermComment cterm=bold 
 hi def link ermCommentBegin Comment
 hi def link ermCommentLine Comment
+
 
 
 syn match ermVariable "\([g-t]\|[xyvzwefc]\)\%(-\?\d\+\)"
@@ -53,43 +57,6 @@ syn match ermInterpolation "%\([SI]([^);\^]\+)\)\|%[A-Z]\%([f-t\-]\?[0-9]\+\)"
 hi def link ermInterpolation Structure
 hi def link ermString String
 
-"hi def link ermGetVariable Number
-"hi def link ermSetVariable Number
-"syn match ermEndNext ";\@<="
-
-"syn match ermComment "(?<=;)"
-"syn match ermCommentLine "\(![!#?$]\)\@="
-"syn match ermOperator "(![?$][A-Z]{2})"
-"syn match ermStringCaret "\^"
-"
-"syn match ermNumeric "\d+"
-"hi def link ermNumeric Numeric
-"
-"syn match ermConstant "\([^)]+\)"
-"
-"syn match ermLabel "\[[^\]]+\]"
-"hi def link ermLabel Boolean
-"syn match ermMacroDeco '@'
-"
-"syn match ermMacroUsage '\$'
-"
-"syn match ermComment "$"
-"syn match ermTT "(?=![!#?$])"
-"
-""string caret
-"
-"hi def link cppOperator		Operator
-"hi def link cppStatement		Statement
-"hi def link ermReceiver		Type
-"hi def link cppType		Type
-"hi def link cppStorageClass	StorageClass
-"hi def link cppStructure		Structure
-"hi def link cppBoolean		Boolean
-"hi def link cppConstant		Constant
-"hi def link cppRawStringDelimiter	Delimiter
-"hi def link cppRawString		String
-"hi def link cppNumber		Number
-"
 let b:current_syntax = "erm"
 
 " vim: ts=8
