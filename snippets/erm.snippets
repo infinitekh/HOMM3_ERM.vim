@@ -1,172 +1,253 @@
 snippet ai
 regexp	'^\s*'
 	!!AI:
+
 snippet ar
 regexp	'^\s*'
 	!!AR
+
 snippet ba
 regexp	'^\s*'
 	!!BA:
+
 snippet bf
 regexp	'^\s*'
 	!!BF:
+
 snippet bg
 regexp	'^\s*'
 	!!BG:
+
 snippet bh
 regexp	'^\s*'
 	!!BH
+
 snippet bm
 regexp	'^\s*'
 	!!BM
+
 snippet bu
 regexp	'^\s*'
 	!!BU:
+
 snippet ca
 regexp	'^\s*'
 	!!CA
+
 snippet cb
 regexp	'^\s*'
 	!!CB
+
 snippet cd
 regexp	'^\s*'
 	!!CD:
+
 snippet ce
 regexp	'^\s*'
 	!!CE
+
 snippet ch
 regexp	'^\s*'
 	!!CH
+
 snippet cm
 regexp	'^\s*'
 	!!CM:
+
 snippet co
 regexp	'^\s*'
 	!!CO
+
 snippet dl
 regexp	'^\s*'
 	!!DL
+
 snippet do
 regexp	'^\s*'
 	!!DO
+
 snippet dw
 regexp	'^\s*'
 	!!DW
+
 snippet ea
 regexp	'^\s*'
 	!!EA
+
 snippet ex
 regexp	'^\s*'
 	!!EX
+
+snippet funame
+abbr Call.Func.Name
+regexp	'^\s*'
+alias callname
+	!!FU(${1}):;
+
+
+snippet funum
+abbr Call.Func.Number
+alias callnum
+regexp	'^\s*'
+	!!FU${1}:;
+
 snippet fr
 regexp	'^\s*'
 	!!FR
+
 snippet gd
 regexp	'^\s*'
 	!!GD
+
 snippet ge
 regexp	'^\s*'
 	!!GE
+
 snippet gr
 regexp	'^\s*'
 	!!GR
+
 snippet he
 regexp	'^\s*'
 	!!HE${1:Hero Variable}
+
 snippet hl
 regexp	'^\s*'
 	!!HL:
+
 snippet ho
 regexp	'^\s*'
 	!!HO
+
 snippet ht
 regexp	'^\s*'
 	!!HT
+
+
 # This is if end_if condition.
 snippet if
+abbr if block
 regexp	'^\s*'
-  !!&${1}:;
+  !!if&${1}:;
     ${2}
   !!en;
+
+
+snippet endif
+regexp	'^\s*'
+  !!en;
+
+snippet else
+regexp	'^\s*'
+  !!el:;
+  
 # This is if elif end_if condition.
 snippet ife
+abbr if else block
+alias ifelse
 regexp	'^\s*'
   !!if&${1}:;
     ${2}
   !!el:;
-  
+    ${3}
   !!en;
 
 snippet iff
+abbr Receiver IF
 regexp	'^\s*'
 	!!IF:
+
 # For online multiplay receiver
 snippet ip
 regexp	'^\s*'
 	!!IP:
+
 snippet kt
 regexp	'^\s*'
 	!!KT
+
 snippet le
 regexp	'^\s*'
 	!!LE
+
 snippet ln
 regexp	'^\s*'
 	!!LN
+
 # Global Monster Receiver
 snippet ma
+abbr Global Monster
 alias Monster_Attribute
 regexp	'^\s*'
 	!!MA:
+
 snippet mc
 regexp	'^\s*'
 	!!MC
+
 snippet mf
 regexp	'^\s*'
 	!!MF:
+
 snippet ml
 regexp	'^\s*'
 	!!ML
+
 snippet mm
 regexp	'^\s*'
 	!!MM:
+
 snippet mn
 regexp	'^\s*'
 	!!MN
+
 snippet mo
 regexp	'^\s*'
 	!!MO
+
 snippet mp
 regexp	'^\s*'
 	!!MP:
+
 snippet mr
 regexp	'^\s*'
 	!!MR:
+
 snippet mt
 regexp	'^\s*'
 	!!MT
+
 snippet mw
 regexp	'^\s*'
 	!!MW
+
 snippet on
 regexp	'^\s*'
   !?FU(${1});
    ${2}
+
 snippet ob
+abbr Object Receiver
+alias object
 regexp	'^\s*'
 	!!OB
+
 snippet ow
 regexp	'^\s*'
 	!!OW:
+
 snippet po
 regexp	'^\s*'
 	!!PO
+
 snippet qw
 regexp	'^\s*'
 	!!QW:
+
 snippet rd
 regexp	'^\s*'
 	!!RD:
+
 snippet re
 regexp	'^\s*'
   !!re ${1:i}/${2:0}/${3:(end_value)}:;
@@ -176,423 +257,610 @@ regexp	'^\s*'
 snippet sc
 regexp	'^\s*'
 	!!SC
+
 snippet sg
 regexp	'^\s*'
 	!!SG
+
 snippet sk
 regexp	'^\s*'
 	!!SK
+  
 snippet sn
 regexp	'^\s*'
 	!!SN:
+
 snippet sp
 regexp	'^\s*'
 	!!SP
+
 snippet sr
 regexp	'^\s*'
 	!!SR
+
 snippet ss
 regexp	'^\s*'
 	!!SS
+
 snippet st
 regexp	'^\s*'
 	!!ST
+  
 snippet sw
 regexp	'^\s*'
 	!!SW
+
 snippet sy
 regexp	'^\s*'
 	!!SY
+
 snippet tm
 regexp	'^\s*'
 	!!TM
+
 snippet tr
 regexp	'^\s*'
 	!!TR
+
 snippet un
 regexp	'^\s*'
 	!!UN:
+
 snippet ur
 regexp	'^\s*'
 	!!UR
-snippet vr
+
+snippet vra
+abbr  !!VR IF And
+alias vrifand
 regexp	'^\s*'
-	!!VR${1:Integer value}
+	!!VR${1:Integer value}&${2:And Condition}:${3};
+  ${4}  
+
+snippet vro
+abbr !!VR If Or
+alias vrifor
+regexp	'^\s*'
+	!!VR${1:Integer value}|${2:Or Condition}/${3:Condition2}:${4};
+  ${4}
+
+snippet vr
+abbr !!VR Value Set
+regexp	'^\s*'
+	!!VR${1:Integer value}:${2};
+
 snippet wg
 regexp	'^\s*'
 	!!WG
+
 snippet wh
 regexp	'^\s*'
 	!!WH
+
 snippet wm
 regexp	'^\s*'
 	!!WM
+
 snippet wt
 regexp	'^\s*'
 	!!WT
 
-snippet exi
+snippet exit
+abbr exit
+alias exi
 regexp	'^\s*'
 	!!FU:E;
-snippet exif
+
+snippet exifa
+abbr if exit(And)
 regexp	'^\s*'
+alias exand exif
 	!!FU&${1}:E;${2}
+
 snippet exifo
+abbr if exit(Or)
 regexp	'^\s*'
 	!!FU|${1}/${2}:E;${3}
 
 snippet mes
+abbr Messege Box
 regexp	'^\s*'
 	!!IF:M^${1}^;${2}
+
 snippet dump
 regexp	'^\s*'
 	!!IF:M^%${1}^;${2}
+
 snippet echo
+abbr System chat me
 regexp	'^\s*'
 	!!IF:L^%${1}^;${2}
 
 snippet _ae
 regexp	'^\s*'
 	!?AE
-snippet _ba
+
+snippet _ba50
+abbr Netbattle begin
+alias netbattlebegin
 regexp	'^\s*'
-	!?BA
+	!?BA50
+
+snippet _ba51
+abbr battle end
+alias battleend
+regexp	'^\s*'
+	!?BA51
+
+snippet _ba0
+abbr battle begin
+alias battlebegin
+regexp	'^\s*'
+	!?BA0
+
+snippet _ba1
+abbr battle end
+alias battleend
+regexp	'^\s*'
+	!?BA1
+
 snippet _bf
 regexp	'^\s*'
 	!?BF
+
 snippet _bg
 regexp	'^\s*'
 	!?BG
+
 snippet _br
 regexp	'^\s*'
 	!?BR
+
 snippet _cm
 regexp	'^\s*'
 	!?CM
+  
 snippet _co
 regexp	'^\s*'
 	!?CO
+
 snippet _dl
 regexp	'^\s*'
 	!?DL
+
 snippet _fu
+abbr Define function Name
+alias define function def
 regexp	'^\s*'
-	!?FU
+	!?FU(${1}):;
+
+snippet _fu
+abbr Define function
+regexp	'^\s*'
+	!?FU${1}:;
+
+
 snippet _ge
 regexp	'^\s*'
 	!?GE
+
 snippet _gm
 regexp	'^\s*'
 	!?GM
+
 snippet _he
 regexp	'^\s*'
 	!?HE
+
 snippet _hl
 regexp	'^\s*'
 	!?HL
+
 snippet _hm
 regexp	'^\s*'
 	!?HM
+
 snippet _ip
 regexp	'^\s*'
 	!?IP
+
 snippet _le
 regexp	'^\s*'
 	!?LE
+
 snippet _mf
 regexp	'^\s*'
 	!?MF
+
 snippet _mg
 regexp	'^\s*'
 	!?MG
+
 snippet _mm
 regexp	'^\s*'
 	!?MM
+
 snippet _mr
 regexp	'^\s*'
 	!?MR
+
 snippet _mw
 regexp	'^\s*'
 	!?MW
+
 snippet _ob
 regexp	'^\s*'
 	!?OB
+
 snippet _pi
 regexp	'^\s*'
 	!?PI
+
 snippet _sn
 regexp	'^\s*'
 	!?SN
+
 snippet _th
 regexp	'^\s*'
 	!?TH
+
 snippet _tl
 regexp	'^\s*'
 	!?TL
+
 snippet _tm
 regexp	'^\s*'
 	!?TM
+
 snippet OnAdventureMapLeftMouseClick
 regexp	'^\s*'
 	OnAdventureMapLeftMouseClick
+
 snippet OnAdventureMapRightMouseClick
 regexp	'^\s*'
 	OnAdventureMapRightMouseClick
+
 snippet OnAfterAdventureMagic
 regexp	'^\s*'
 	OnAfterAdventureMagic
+
 snippet OnAfterBattle
 regexp	'^\s*'
 	OnAfterBattle
+
 snippet OnAfterBattleAction
 regexp	'^\s*'
 	OnAfterBattleAction
+
 snippet OnAfterBattleAfterDataReceived
 regexp	'^\s*'
 	OnAfterBattleAfterDataReceived
+
 snippet OnAfterBattleBeforeDataSend
 regexp	'^\s*'
 	OnAfterBattleBeforeDataSend
+
 snippet OnAfterBattleForThisPcDefender
 regexp	'^\s*'
 	OnAfterBattleForThisPcDefender
+
 snippet OnAfterBattleUniversal
 regexp	'^\s*'
 	OnAfterBattleUniversal
+
 snippet OnAfterCommanderBuy
 regexp	'^\s*'
 	OnAfterCommanderBuy
+
 snippet OnAfterCommanderResurrect
 regexp	'^\s*'
 	OnAfterCommanderResurrect
+
 snippet OnAfterErmInstructions
 regexp	'^\s*'
 	OnAfterErmInstructions
+
 snippet OnAfterHeroInteraction
 regexp	'^\s*'
 	OnAfterHeroInteraction
+
 snippet OnAfterLoadGame
 regexp	'^\s*'
 	OnAfterLoadGame
+
 snippet OnAfterSaveGame
 regexp	'^\s*'
 	OnAfterSaveGame
+
 snippet OnAfterTacticsPhase
 regexp	'^\s*'
 	OnAfterTacticsPhase
+
 snippet OnAICalcStackAttackEffect
 regexp	'^\s*'
 	OnAICalcStackAttackEffect
+
 snippet OnBattlefieldVisible
 regexp	'^\s*'
 	OnBattlefieldVisible
+
 snippet OnBattleMouseHint
 regexp	'^\s*'
 	OnBattleMouseHint
+
 snippet OnBattleRegeneratePhase
 regexp	'^\s*'
 	OnBattleRegeneratePhase
+
 snippet OnBattleRound
 regexp	'^\s*'
 	OnBattleRound
+
 snippet OnBattleScreenMouseClick
 regexp	'^\s*'
 	OnBattleScreenMouseClick
+
 snippet OnBattleStackObtainsTurn
 regexp	'^\s*'
 	OnBattleStackObtainsTurn
+
 snippet OnBeforeAdventureMagic
 regexp	'^\s*'
 	OnBeforeAdventureMagic
+
 snippet OnBeforeBattle
 regexp	'^\s*'
 	OnBeforeBattle
+
 snippet OnBeforeBattleAction
 regexp	'^\s*'
 	OnBeforeBattleAction
+
 snippet OnBeforeBattleAfterDataReceived
 regexp	'^\s*'
 	OnBeforeBattleAfterDataReceived
+
 snippet OnBeforeBattleBeforeDataSend
 regexp	'^\s*'
 	OnBeforeBattleBeforeDataSend
+
 snippet OnBeforeBattlefieldVisible
 regexp	'^\s*'
 	OnBeforeBattlefieldVisible
+
 snippet OnBeforeBattleForThisPcDefender
 regexp	'^\s*'
 	OnBeforeBattleForThisPcDefender
+
 snippet OnBeforeBattleUniversal
 regexp	'^\s*'
 	OnBeforeBattleUniversal
+
 snippet OnBeforeHeroInteraction
 regexp	'^\s*'
 	OnBeforeHeroInteraction
+
 snippet OnBeforeSaveGame
 regexp	'^\s*'
 	OnBeforeSaveGame
+
 snippet OnBuildTownBuilding
 regexp	'^\s*'
 	OnBuildTownBuilding
+
 snippet OnChat
 regexp	'^\s*'
 	OnChat
+
 snippet OnCloseCommanderWindow
 regexp	'^\s*'
 	OnCloseCommanderWindow
+
 snippet OnCloseHeroScreen
 regexp	'^\s*'
 	OnCloseHeroScreen
+
 snippet OnCloseRecruitDlg
 regexp	'^\s*'
 	OnCloseRecruitDlg
+
 snippet OnCloseTownScreen
 regexp	'^\s*'
 	OnCloseTownScreen
+
 snippet OnCombatRound
 regexp	'^\s*'
 	OnCombatRound
+
 snippet OnCustomDialogEvent
 regexp	'^\s*'
 	OnCustomDialogEvent
+
 snippet OnDwarfMagicResistance
 regexp	'^\s*'
 	OnDwarfMagicResistance
+
 snippet OnEnterTownHall
 regexp	'^\s*'
 	OnEnterTownHall
+
 snippet OnEquipArt
 regexp	'^\s*'
 	OnEquipArt
+
 snippet OnEvery10Seconds
 regexp	'^\s*'
 	OnEvery10Seconds
+
 snippet OnEvery2Seconds
 regexp	'^\s*'
 	OnEvery2Seconds
+
 snippet OnEvery5Seconds
 regexp	'^\s*'
 	OnEvery5Seconds
+
 snippet OnEveryDay
 regexp	'^\s*'
 	OnEveryDay
+
 snippet OnEveryMinute
 regexp	'^\s*'
 	OnEveryMinute
+
 snippet OnEverySecond
 regexp	'^\s*'
 	OnEverySecond
+
 snippet OnGameEnter
 regexp	'^\s*'
 	OnGameEnter
+
 snippet OnGameLeave
 regexp	'^\s*'
 	OnGameLeave
+
 snippet OnHeroesMeetScreenMouseClick
 regexp	'^\s*'
 	OnHeroesMeetScreenMouseClick
+
 snippet OnHeroGainLevel
 regexp	'^\s*'
 	OnHeroGainLevel
+
 snippet OnHeroMove
 regexp	'^\s*'
 	OnHeroMove
+
 snippet OnHeroScreenMouseClick
 regexp	'^\s*'
 	OnHeroScreenMouseClick
+
 snippet OnKeyPressed
 regexp	'^\s*'
 	OnKeyPressed
+
 snippet OnKingdomOverviewMouseClick
 regexp	'^\s*'
 	OnKingdomOverviewMouseClick
+
 snippet OnLeaveTownHall
 regexp	'^\s*'
 	OnLeaveTownHall
+
 snippet OnLoadHeroScreen
 regexp	'^\s*'
 	OnLoadHeroScreen
+
 snippet OnMagicBasicResistance
 regexp	'^\s*'
 	OnMagicBasicResistance
+
 snippet OnMagicCorrectedResistance
 regexp	'^\s*'
 	OnMagicCorrectedResistance
+
 snippet OnMonsterPhysicalDamage
 regexp	'^\s*'
 	OnMonsterPhysicalDamage
+
 snippet OnMp3MusicChange
 regexp	'^\s*'
 	OnMp3MusicChange
+
 snippet OnOpenCommanderWindow
 regexp	'^\s*'
 	OnOpenCommanderWindow
+
 snippet OnOpenHeroScreen
 regexp	'^\s*'
 	OnOpenHeroScreen
+
 snippet OnOpenRecruitDlg
 regexp	'^\s*'
 	OnOpenRecruitDlg
+
 snippet OnOpenTownScreen
 regexp	'^\s*'
 	OnOpenTownScreen
+
 snippet OnPostHeroScreen
 regexp	'^\s*'
 	OnPostHeroScreen
+
 snippet OnPostTownScreen
 regexp	'^\s*'
 	OnPostTownScreen
+
 snippet OnPreHeroScreen
 regexp	'^\s*'
 	OnPreHeroScreen
+
 snippet OnPreTownScreen
 regexp	'^\s*'
 	OnPreTownScreen
+
 snippet OnRecruitDlgAction
 regexp	'^\s*'
 	OnRecruitDlgAction
+
 snippet OnRecruitDlgMouseClick
 regexp	'^\s*'
 	OnRecruitDlgMouseClick
+
 snippet OnRecruitDlgRecalc
 regexp	'^\s*'
 	OnRecruitDlgRecalc
+
 snippet OnRemoteEvent
 regexp	'^\s*'
 	OnRemoteEvent
+
 snippet OnSavegameRead
 regexp	'^\s*'
 	OnSavegameRead
+
 snippet OnSavegameWrite
 regexp	'^\s*'
 	OnSavegameWrite
+
 snippet OnSetupBattlefield
 regexp	'^\s*'
 	OnSetupBattlefield
+
 snippet OnSoundPlay
 regexp	'^\s*'
 	OnSoundPlay
+
 snippet OnStackToStackDamage
 regexp	'^\s*'
 	OnStackToStackDamage
+
 snippet OnSwitchTownScreen
 regexp	'^\s*'
 	OnSwitchTownScreen
+
 snippet OnTownHallMouseClick
 regexp	'^\s*'
 	OnTownHallMouseClick
+
 snippet OnTownMouseClick
 regexp	'^\s*'
 	OnTownMouseClick
+
 snippet OnTownMouseHint
 regexp	'^\s*'
 	OnTownMouseHint
+
 snippet OnUnequipArt
 regexp	'^\s*'
 	OnUnequipArt
+
 snippet OnWanderingMonsterDeath
 regexp	'^\s*'
 	OnWanderingMonsterDeath
+
 snippet OnWanderingMonsterReach
 regexp	'^\s*'
 	OnWanderingMonsterReach
+
